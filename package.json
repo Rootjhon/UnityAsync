@@ -1,13 +1,13 @@
 {
-  "name": "com.junqiang.unityasync",
-  "displayName": "UnityAsync",
-  "version": "0.1.2",
-  "unity": "2019.4",
-  "description": "UnityAsync is a coroutine framework for Unity built around the async API. This is not only a more efficient and effective replacement of Unity's IEnumerator coroutines, but also seamlessly integrates Unity with .NET 4+ asynchronous APIs.",
-  "keywords": [
-    "UnityAsync",
-    "coroutine"
-  ],
-  "category": "Coroutine",
-  "dependencies": {}
+    "name":"com.junqiang.unityasync",
+    "displayName":"UnityAsync",
+    "version":"0.1.5",
+    "unity":"2019.4",
+    "description":"UnityAsync is a coroutine framework for Unity built around the async API. This is not only a more efficient and effective replacement of Unity's IEnumerator coroutines, but also seamlessly integrates Unity with .NET 4+ asynchronous APIs.",
+    "keywords":[
+        "UnityAsync",
+        "coroutine"
+    ],
+    "category":"Coroutine",
+    "dependencies":{}
 }

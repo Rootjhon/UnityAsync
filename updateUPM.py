@@ -11,9 +11,11 @@
 # here put the import lib
 import os
 import shutil
+import json
 
-def updateUPM(packageName: str, tag: str):
+def updateUPM(packageName: str, version_tag: str):
     os.system("git checkout -f master")
+    modify_packageJson("Assets/{0}/package.json".format(packageName), version_tag)
     shutil.move("Assets/{0}".format(packageName), ".git/")
     
     os.system("git checkout -f upm")
@@ -27,11 +29,21 @@ def updateUPM(packageName: str, tag: str):
     shutil.rmtree(dir_name)
 
     os.system("git add -A")
-    os.system("git commit -m 'update upm to {0}'".format(tag))
-    os.system("git tag {0}".format(tag))
+    os.system("git commit -m 'update upm to {0}'".format(version_tag))
+    os.system("git tag {0}".format(version_tag))
     os.system("git push origin upm --tags")
 
     os.system("git checkout -f master")
+    
+def modify_packageJson(package_path: str, version_tag: str):
+    json_item = ""
+    with open(package_path, 'r') as fileItem:
+        json_item = json.load(fileItem)
+        json_item["version"] = version_tag
+    with open(package_path, 'wb') as fileItem:
+        fileItem.write(json.dumps(json_item, separators=(",", ":"), indent=4).encode())
+        fileItem.flush()
+    pass
 
 if __name__ == "__main__":
     tag = "0.1.2"

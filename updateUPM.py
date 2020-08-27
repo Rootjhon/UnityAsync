@@ -34,7 +34,7 @@ def updateUPM(packageName: str, version_tag: str):
     os.system("git push origin upm --tags")
 
     os.system("git checkout -f master")
-    
+
 def modify_packageJson(package_path: str, version_tag: str):
     json_item = ""
     with open(package_path, 'r') as fileItem:
@@ -46,7 +46,7 @@ def modify_packageJson(package_path: str, version_tag: str):
     pass
 
 if __name__ == "__main__":
-    tag = "0.1.2"
+    tag = "0.1.4"
     packageName = "UnityAsync"
     # updateUPM(packageName,tag)
     pass

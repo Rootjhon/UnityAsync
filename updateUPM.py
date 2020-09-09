@@ -46,7 +46,7 @@ def modify_packageJson(package_path: str, version_tag: str):
     pass
 
 if __name__ == "__main__":
-    tag = "0.1.5"
+    tag = "0.1.6"
     packageName = "UnityAsync"
     # updateUPM(packageName,tag)
     pass
